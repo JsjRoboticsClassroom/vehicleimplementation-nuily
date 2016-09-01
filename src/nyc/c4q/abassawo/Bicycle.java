@@ -3,28 +3,36 @@ package nyc.c4q.abassawo;
 /**
  * Created by c4q-ac29 on 8/31/16.
  */
-public class Bicycle implements Vehicle, WheeliaAble {
-    double speed;
+    public void applyBrake(){
 
-    public Bicycle(){
-        this.speed = 0;
-    }
+        // brake pedal needs to be stepped on
+        // speed will decrease (vastly if pedal is pressed fully at once)
 
 
-    @Override
-    public void applyBrakes() {
+        initialSpeed = 0;
+        System.out.println("Your speed is " + initialSpeed);
 
     }
 
-    @Override
     public void speedUp(int delta) {
 
+        // accelerator speed determined by delta
+
+        initialSpeed += delta;
+        System.out.println("Your speed is " + initialSpeed);
+
     }
 
-    @Override
     public void slowDown(int delta) {
 
+        initialSpeed -= delta;
+        System.out.println("Your speed is " + initialSpeed);
+
     }
+
+    // @Override is an annotation letting us know the method came from somewhere else
+
+// andres arango
 
     @Override
     public boolean popAWheelie(int duration) {
